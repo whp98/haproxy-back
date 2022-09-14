@@ -35,6 +35,9 @@ jobs:
           - USE_THREAD=1
           - USE_ZLIB=1
     steps:
+    - uses: TheMrMilchmann/setup-msvc-dev@v2
+      with:
+        arch: x64
     - uses: actions/checkout@v3
     - uses: msys2/setup-msys2@v2
       with:

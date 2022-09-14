@@ -65,3 +65,15 @@ jobs:
       run: |
         ./haproxy -vv
         echo "::set-output name=version::$(./haproxy -v |awk 'NR==1{print $3}')"
+        - name: Upload Artifact[net-bsd]
+    - name: Archive Artifacts
+      uses: thedoctor0/zip-release@master
+      with:
+        type: "zip"
+        filename: haproxy-windows-x64.zip
+        path: ./
+    - uses: actions/upload-artifact@v1.0.0
+      with:
+        name: haproxy-windows-x64.zip
+        path: haproxy-windows-x64.zip
+    

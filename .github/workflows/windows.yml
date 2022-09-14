@@ -72,7 +72,7 @@ jobs:
         filename: haproxy-windows-x64.zip
         path: ./
     - name: Upload Artifact[windows]
-    - uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: haproxy-windows-x64.zip
         path: haproxy-windows-x64.zip

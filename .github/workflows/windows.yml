@@ -60,6 +60,7 @@ jobs:
           CC=${{ matrix.CC }} \
           DEBUG="-DDEBUG_STRICT -DDEBUG_MEMORY_POOLS -DDEBUG_POOL_INTEGRITY" \
           ${{ join(matrix.FLAGS, ' ') }}
+        dumpbin /dependents ./haproxy
     - name: Show HAProxy version
       id: show-version
       run: |
